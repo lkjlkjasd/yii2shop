@@ -1,6 +1,6 @@
 <?php
 ?>
-<a class="btn btn-info" href="<?=\yii\helpers\Url::to(['articlecategory/add'])?>">添加</a>
+<a class="btn btn-info" href="<?=\yii\helpers\Url::to(['article-category/add'])?>">添加</a>
 <table class="table table-bordered">
     <tr>
         <td>ID</td>
@@ -16,8 +16,8 @@
             <td><?php echo $row->intro?></td>
             <td><?php echo $row->sort?></td>
             <td>
-                <?=\yii\bootstrap\Html::a('删除',['articlecategory/delete','id'=>$row->id],['class'=>'btn btn-info'])?>
-                <?=\yii\bootstrap\Html::a('修改',['articlecategory/edit','id'=>$row->id],['class'=>'btn btn-danger'])?>
+                <?=\yii\bootstrap\Html::a('删除',['article-category/delete','id'=>$row->id],['class'=>'btn btn-info'])?>
+                <?=\yii\bootstrap\Html::a('修改',['article-category/edit','id'=>$row->id],['class'=>'btn btn-danger'])?>
             </td>
         </tr>
     <?php endforeach;?>

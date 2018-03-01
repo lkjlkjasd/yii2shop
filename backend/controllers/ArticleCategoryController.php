@@ -5,7 +5,7 @@ use backend\models\Articlecategory;
 use yii\data\Pagination;
 use yii\web\Controller;
 
-class ArticlecategoryController extends Controller{
+class ArticleCategoryController extends Controller{
     //添加
     public function actionAdd(){
         //创建request对象
@@ -25,7 +25,7 @@ class ArticlecategoryController extends Controller{
                 //信息提示
                 \Yii::$app->session->setFlash('success','添加成功');
                 //跳转
-                return $this->redirect(['articlecategory/index']);
+                return $this->redirect(['article-category/index']);
             }
         }
         return $this->render('add',['model'=>$model]);
@@ -37,7 +37,7 @@ class ArticlecategoryController extends Controller{
         //创建分页工具类
         $pager = new Pagination();
         //总条数
-        $pager->totalCount = $query->count();
+        $pager->totalCount = $query->where(['is_deleted'=>0])->count();
         //每页显示条数
         $pager->defaultPageSize = 5;
         //查询当前显示的条数

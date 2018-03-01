@@ -3,19 +3,16 @@ namespace backend\models;
 
 use yii\db\ActiveRecord;
 
-class Articlecategory extends ActiveRecord{
+class ArticleDetail extends ActiveRecord{
     public function attributeLabels(){
         return [
-            'name' => '名称',
-            'intro' => '简介',
-            'sort' => '排序',
+            'content' => '内容',
         ];
     }
     public function rules()
     {
         return [
-            [['name','intro','sort',],'required'],
-
+            [['content',],'required'],
         ];
     }
 }
