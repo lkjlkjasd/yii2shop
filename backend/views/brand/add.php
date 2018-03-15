@@ -62,7 +62,8 @@ JS
 //-----------------------JS代码---------------
 //---------------------------HTML----------------------
 //---------------------------加载文件-----------------
-echo '<img id="logo-view" width="120px"/>';
+
+echo "<img id='logo-view' width='120px' src='{$model->logo}'/>";
 echo $form->field($model,'sort')->textInput();
 echo "<button type='submit' class='btn bg-primary'>提交</button>";
 \yii\bootstrap\ActiveForm::end();

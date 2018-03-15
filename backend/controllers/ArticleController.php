@@ -97,11 +97,6 @@ class ArticleController extends Controller{
             if ($model->validate() && $content->validate()){
                 //保存数据
                 $model->save();
-                //获取文章表的id
-                $article_id = $model->attributes['id'];
-                //给内容id赋值
-                $content->article_id = $article_id;
-                //var_dump($content->article_id);exit;
                 //保存内容数据
                 $content->save();
                 //信息提示

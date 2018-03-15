@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use backend\filters\RbacFilter;
 use backend\models\Brand;
 use yii\data\Pagination;
 use yii\web\Controller;
@@ -116,5 +117,14 @@ class BrandController extends Controller{
                'url'=>$fileName
             ]);
         }
+    }
+    //过滤器
+    public function behaviors(){
+        return [
+          'rbac'=>[
+            'class'=>RbacFilter::class,
+              'except'=>['upload']
+          ]
+        ];
     }
 }
